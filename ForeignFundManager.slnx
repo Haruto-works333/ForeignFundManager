@@ -1,3 +1,6 @@
 <Solution>
   <Project Path="ForeignFundManager.UI/ForeignFundManager.UI.vbproj" />
+  <Project Path="ForeignFundManager.Batch/ForeignFundManager.Batch.vbproj" />
+  <Project Path="ForeignFundManager.Core/ForeignFundManager.Core.vbproj" />
+  <Project Path="ForeignFundManager.Data/ForeignFundManager.Data.vbproj" />
 </Solution>

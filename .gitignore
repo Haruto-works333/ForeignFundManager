@@ -47,6 +47,10 @@ UpgradeLog*.htm
 ServiceFabricBackup/
 *.rptproj.bak
 
+# Claude Code
+.claude/
+CLAUDE.md
+
 # OS files
 Thumbs.db
 ehthumbs.db

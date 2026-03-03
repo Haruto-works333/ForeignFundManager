@@ -44,7 +44,11 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.3.4\lib\net46\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -58,13 +62,36 @@
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
+    <Import Include="System.Data.SqlClient" />
     <Import Include="System.Diagnostics" />
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="Models\Fund.vb" />
+    <Compile Include="Models\ExchangeRate.vb" />
+    <Compile Include="Models\BusinessCalendar.vb" />
+    <Compile Include="Models\NavHistory.vb" />
+    <Compile Include="Models\AuditLog.vb" />
+    <Compile Include="Models\ImportLog.vb" />
+    <Compile Include="Models\ImportLogDetail.vb" />
+    <Compile Include="Models\CodeMaster.vb" />
+    <Compile Include="Models\NavCalculationTarget.vb" />
+    <Compile Include="Models\BatchResult.vb" />
+    <Compile Include="Models\BatchResultDetail.vb" />
+    <Compile Include="Models\RateLookupResult.vb" />
+    <Compile Include="Infrastructure\DbConnectionFactory.vb" />
+    <Compile Include="Repositories\FundRepository.vb" />
+    <Compile Include="Repositories\CurrencyRepository.vb" />
+    <Compile Include="Repositories\CountryRepository.vb" />
+    <Compile Include="Repositories\ExchangeRateRepository.vb" />
+    <Compile Include="Repositories\CalendarRepository.vb" />
+    <Compile Include="Repositories\CodeRepository.vb" />
+    <Compile Include="Repositories\NavHistoryRepository.vb" />
+    <Compile Include="Repositories\AuditLogRepository.vb" />
+    <Compile Include="Repositories\ImportLogRepository.vb" />
+    <Compile Include="Repositories\ImportLogDetailRepository.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,6 +126,8 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
+  <!-- Data layer has no project references (bottom of the dependency chain) -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -44,8 +44,16 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.3.3, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.3\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.3.4\lib\net46\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,13 +66,29 @@
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
+    <Import Include="System.Data.SqlClient" />
     <Import Include="System.Diagnostics" />
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="Exceptions\BusinessException.vb" />
+    <Compile Include="Constants\AppConstants.vb" />
+    <Compile Include="Constants\MessageConstants.vb" />
+    <Compile Include="Utils\AppConfig.vb" />
+    <Compile Include="Utils\RoundingHelper.vb" />
+    <Compile Include="Utils\CsvHelper.vb" />
+    <Compile Include="Validators\IsinValidator.vb" />
+    <Compile Include="Validators\NavDataValidator.vb" />
+    <Compile Include="Validators\ExchangeRateValidator.vb" />
+    <Compile Include="Validators\CalendarValidator.vb" />
+    <Compile Include="Services\FundService.vb" />
+    <Compile Include="Services\ExchangeRateService.vb" />
+    <Compile Include="Services\CalendarService.vb" />
+    <Compile Include="Services\DataImportService.vb" />
+    <Compile Include="Services\NavCalculationService.vb" />
+    <Compile Include="Services\ReportService.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,6 +123,13 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ForeignFundManager.Data\ForeignFundManager.Data.vbproj">
+      <Project>{2F1651F9-DFA2-4524-8472-2B131B7A0EE6}</Project>
+      <Name>ForeignFundManager.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

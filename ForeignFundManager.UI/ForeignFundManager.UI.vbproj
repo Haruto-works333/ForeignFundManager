@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{156D351D-62D3-45D1-AF49-B138D07FEEDC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ForeignFundManager.UI.My.MyApplication</StartupObject>
+    <StartupObject>ForeignFundManager.UI.Forms.FrmMain</StartupObject>
     <RootNamespace>ForeignFundManager.UI</RootNamespace>
     <AssemblyName>ForeignFundManager.UI</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -48,7 +48,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.3.3, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.3\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.3.4\lib\net46\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -73,11 +80,74 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Forms\FrmMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Forms\FrmMain.Designer.vb">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFundList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFundList.Designer.vb">
+      <DependentUpon>FrmFundList.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFundEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFundEdit.Designer.vb">
+      <DependentUpon>FrmFundEdit.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFundHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFundHistory.Designer.vb">
+      <DependentUpon>FrmFundHistory.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmExchangeRateList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmExchangeRateList.Designer.vb">
+      <DependentUpon>FrmExchangeRateList.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmExchangeRateEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmExchangeRateEdit.Designer.vb">
+      <DependentUpon>FrmExchangeRateEdit.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCalendar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCalendar.Designer.vb">
+      <DependentUpon>FrmCalendar.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDataImport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDataImport.Designer.vb">
+      <DependentUpon>FrmDataImport.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBatchExecution.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBatchExecution.Designer.vb">
+      <DependentUpon>FrmBatchExecution.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReportOutput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReportOutput.Designer.vb">
+      <DependentUpon>FrmReportOutput.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -115,6 +185,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ForeignFundManager.Core\ForeignFundManager.Core.vbproj">
+      <Project>{3531A942-FC9F-4D98-A21B-166A3C14230D}</Project>
+      <Name>ForeignFundManager.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ForeignFundManager.Data\ForeignFundManager.Data.vbproj">
+      <Project>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</Project>
+      <Name>ForeignFundManager.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
