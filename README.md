@@ -49,15 +49,15 @@ ForeignFundManager.sln
 
 ### 前提条件
 
-- Visual Studio 2022（VB.NETワークロード）
-- SQL Server Express 2019+
+- Visual Studio 2026（VB.NETワークロード）
+- SQL Server Express 2025
 - .NET Framework 4.8
 
 ### 手順
 
 1. **データベース構築**
    - SQL Server に `ForeignFundManager` データベースを作成
-   - `sql/` フォルダのスクリプトを順番に実行
+   - `sql/` フォルダのスクリプトを順番に実行(現在調整中/現段階で試す場合はご自身でtableを作成する必要があります)
 
 2. **NuGetパッケージ復元**
    ```
