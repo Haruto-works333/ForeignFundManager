@@ -5,7 +5,6 @@
 ## デモ画像
 <img width="1000" height="749" alt="スクリーンショット 2026-03-04 085157" src="https://github.com/user-attachments/assets/4b17c0e9-d950-4c05-a1d5-7ba17289b10e" />
 <img width="996" height="753" alt="スクリーンショット 2026-03-04 085219" src="https://github.com/user-attachments/assets/4681926a-ef37-4b96-bcd1-709ed1eed4f8" />
-<img width="1153" height="657" alt="スクリーンショット 2026-02-14 205700" src="https://github.com/user-attachments/assets/b4153875-1ecd-4aad-b240-126a8cc4412b" />
 
 
 ## 技術スタック
