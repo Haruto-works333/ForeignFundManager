@@ -90,7 +90,7 @@ ForeignFundManager.Batch.exe /date:YYYY-MM-DD
 
 ## 設計書
 
-`docs/` フォルダに詳細設計書（日本語）を格納。
+`docs/` フォルダに開発ドキュメント（日本語）を格納。
 
 | ファイル | 内容 |
 |----------|------|
