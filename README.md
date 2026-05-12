@@ -19,10 +19,10 @@
 | UI | Windows Forms (MDI) |
 | バッチ | コンソールアプリケーション |
 | データアクセス | ADO.NET（パラメタライズドクエリ） |
-| データベース | SQL Server Express 2019+ |
+| データベース | SQL Server Express 2025 |
 | Excel出力 | EPPlus 4.5.3.3 |
 | ログ | NLog 5.x |
-| ビルド | MSBuild / Visual Studio 2022 |
+| ビルド | MSBuild / Visual Studio 2026 |
 
 ## ソリューション構成
 
